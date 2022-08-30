@@ -1,33 +1,34 @@
 #include <iostream>
-using std::string;
 
 template<class T>
-class Employee {
-public:
-    string Name;
-    string Company;
+class List {
+    int LastElm;
     int Age;
     T lista[10];
-    void IntroduceYourself(){
-        std::cout << "Name " << Name << std::endl;
-        std::cout << "Company " << Company << std::endl;
-        std::cout << "Age " << Age << std::endl;
+    public:
+    void setAge(int Age){
+        this->Age = Age;
+    }
+    List(){
+        this->Age = 12;
+        this->LastElm = 0;
+        std::cout << "List initialized!!" << std::endl;
+    }
+    void push(T elm){
+        lista[LastElm] = elm ;
+    };
+    T pop(){
+        return this->lista[LastElm];
     }
 };
 
 
 int main()
 {
-   printf("Hello World !\n");
-   /* Lista* lista = new Lista(); */
-   Employee<char> employee1;
-   employee1.Name = "Erick De Jesus";
-   employee1.Age = 20;
-   employee1.Company = "Erlang solutions";
-   employee1.IntroduceYourself();
-
-   employee1.lista[0] = 2;
-   std::cout << employee1.lista[0];
+   List<char> employee1;
+   employee1.setAge(20);
+   employee1.push('a');
+   std::cout << employee1.pop();
 
    return 0;
 }
