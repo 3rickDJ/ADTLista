@@ -22,4 +22,3 @@ all: ${BINS}
 clean:
 	@echo "Cleaning up..."
 	rm -rvf *.o ${BINS}
-all:
