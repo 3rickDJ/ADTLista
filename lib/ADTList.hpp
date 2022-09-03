@@ -1,16 +1,17 @@
+#pragma once
 #include <iostream>
 #define MAX 10
 using std::cout;
 using std::endl;
 
-template<class T>
+template<typename T>
 class List {
     int LastElm;
     T lista[MAX];
 
     public:
     List(){
-        this->LastElm = 0;
+        LastElm = 0;
         cout << "List initialized!!" << endl;
     }
     bool isEmpty(){return LastElm == 0;}
@@ -112,44 +113,3 @@ class List {
         }
     }
 };
-
-class People {
-    public:
-    int age;
-    float balance;
-    char sex;
-};
-
-int main()
-{
-    List<int> lista2;
-    lista2.push(2);
-    lista2.printList();
-    List<char> lista;
-    lista.push('Z');
-    lista.printList();
-    List<float> lista1;
-    lista1.push(20.2);
-    lista1.printList();
-
-   /* lista.push('a'); */
-   /* lista.push('b'); */
-   /* lista.push('c'); */
-   /* lista.push('d'); */
-   /* lista.push('e'); */
-   /* lista.push('f'); */
-   /* lista.push('g'); */
-   /* lista.push('h'); */
-   /* cout << "Is empty? " <<lista.isEmpty() << endl; */
-   /* cout << "Is full? " << lista.isFull() << endl; */
-   /* lista.insertStart('Z'); */
-   /* lista.insertEnd('2'); */
-   /* lista.printList(); */
-   /* cout << "Is full? " << lista.isFull() << endl; */
-   /* /1* cout << lista.pop() << endl; *1/ */
-   /* lista.deleteElm(1); */
-   /* lista.printList(); */
-   /* lista.deleteDuplicates(); */
-   /* cout << lista.getElm(8) << endl ; */
-   return 0;
-}
